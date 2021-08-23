@@ -49,6 +49,8 @@ resource "azurerm_resource_group" "rg" {
 
 > <b>terraform validate</b> - It will validate your configuration to check whether it is valid syntactically and consistent internally.
 
+> <b>terraform plan</b> - This generates an execution plan that shows what actions will be taken when the plan is applied. It includes the server configuration, log in details, storage settings, and the deployment zone as seen in the example underneath.
+
 > <b>terraform apply</b> - It will start creating resources on cloud.
 
 > <b>terraform show</b> - It will inspect the current state.

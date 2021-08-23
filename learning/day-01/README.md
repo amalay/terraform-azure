@@ -33,8 +33,7 @@ resource "azurerm_resource_group" "rg" {
 
 #### Commands
 > terraform init
-
-It will initialize provider plugins and backend
+  It will initialize provider plugins and backend
 
 > terraform fmt
 

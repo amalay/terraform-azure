@@ -32,21 +32,21 @@ resource "azurerm_resource_group" "rg" {
 3. Execute below commands one by one.
 
 #### Commands
-> <b>terraform init</b> - It will initialize provider plugins and backend
+> <b>terraform init</b> - It will initialize provider plugins and backend.
 
-> terraform fmt
+> <b>terraform fmt</b> - It automatically updates configurations in the current directory for readability and consistency.
 
-> terraform validate
+> <b>terraform validate</b> - It will validate your configuration to check whether it is valid syntactically and consistent internally.
 
-> terraform apply
+> <b>terraform apply<b> - It will start creating resources on cloud.
 
-> terraform show
+> <b>terraform show</b> - It will inspect the current state.
 
-> terraform state list
+> <b>terraform state list</b> - It will list the resources in the project's state.
 
-> terraform state
+> <b>terraform state</b> - It is used for advanced state management.
 
-> terraform destroy
+> <b>terraform destroy</b> - It will destroy all the resources from cloud subscription.
 
 #### Validate on Azure portal
 ![image](https://user-images.githubusercontent.com/84455469/130459762-b3db998d-387d-4c48-aceb-08fbf41123d8.png)

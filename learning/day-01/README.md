@@ -40,7 +40,9 @@ resource "azurerm_resource_group" "rg" {
 
 ```
 
-3. Execute below commands one by one.
+3. <b>azurerm</b> is the Azure Provider which used to configure infrastructure in Azure subscription using Azure Resource Manager APIs.
+
+4. Execute below commands one by one.
 
 #### Commands
 > <b>az login</b> - To login to azure.

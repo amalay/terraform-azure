@@ -43,6 +43,12 @@ resource "azurerm_resource_group" "rg" {
 3. Execute below commands one by one.
 
 #### Commands
+> <b>az login</b> - To login to azure.
+
+> <b>az account list</b> - To see the list of your azure subscription.
+
+> <b>az account set --subscription="43465ce6-1506-4876-a203-3d3f947d8be7"</b> - To set the desired subscription to use to create resources.
+
 > <b>terraform init</b> - It will initialize provider plugins and backend.
 
 > <b>terraform fmt</b> - It automatically updates configurations in the current directory for readability and consistency.

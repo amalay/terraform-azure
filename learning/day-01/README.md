@@ -9,7 +9,7 @@
 4. Upgrade Azure CLI if it older version by executing this command <b>az upgrade</b> on your terminal in VS code.
 5. Install Terraform extension by Microsoft in VS code.
 6. Download Terraform for Windows 32/64 bit and install it on your machine. (https://www.terraform.io/downloads.html)
-7. Validate terraform whether it is installed successfully or not by executing this command <b>terraform -help </b> on your terminal in VS code.
+7. Validate terraform whether it is installed successfully or not by executing this command <b> terraform -v or terraform -help </b> on your terminal in VS code.
 
 #### Project Setup
 1. Create a file <b>main.tf</b> on root folder

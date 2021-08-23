@@ -20,7 +20,6 @@ terraform {
 provider "azurerm" {
   features {}
 }
-```
 
 # 1. Create a Resource Group
 resource "azurerm_resource_group" "rg" {
@@ -28,15 +27,25 @@ resource "azurerm_resource_group" "rg" {
   location = "westus2"  
 }
 
+```
+
 3. Execute below commands one by one.
 
 #### Commands
 > terraform init
+
 > terraform fmt
+
 > terraform validate
+
 > terraform apply
+
 > terraform show
+
 > terraform state list
+
 > terraform state
+
 > terraform destroy
+
 

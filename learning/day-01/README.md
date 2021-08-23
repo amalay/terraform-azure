@@ -34,6 +34,8 @@ resource "azurerm_resource_group" "rg" {
 #### Commands
 > terraform init
 
+It will initialize provider plugins and backend
+
 > terraform fmt
 
 > terraform validate
@@ -47,5 +49,9 @@ resource "azurerm_resource_group" "rg" {
 > terraform state
 
 > terraform destroy
+
+#### Validate on Azure portal
+![image](https://user-images.githubusercontent.com/84455469/130459762-b3db998d-387d-4c48-aceb-08fbf41123d8.png)
+
 
 

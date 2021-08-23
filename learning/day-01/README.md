@@ -1,9 +1,10 @@
 # Terraform Learning - Day 01
 
 ### Learning Steps
-1. Create a file main.tf on root folder
+1. Create a file <b>main.tf</b> on root folder
 2. Add below code snnipet in it:
 
+```
 # Configure the Azure provider
 terraform {
   required_providers {
@@ -19,6 +20,7 @@ terraform {
 provider "azurerm" {
   features {}
 }
+```
 
 # 1. Create a Resource Group
 resource "azurerm_resource_group" "rg" {

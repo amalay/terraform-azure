@@ -20,9 +20,9 @@ resource "azurerm_resource_group" "rg" {
   name     = var.resource_group_name
   location = "westus2"
 
-  # 3. Added later to check the update functionality
+  # Optional
   tags = {
-        Environment = "Terraform Getting Started"
+        Environment = "Terraform Learning Day 01"
         Team = "DevOps"
     }
 }

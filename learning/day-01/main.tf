@@ -1,5 +1,6 @@
 # Configure the Azure provider
 terraform {
+  # Provider
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
@@ -7,6 +8,7 @@ terraform {
     }
   }
 
+  # Backend to store Terraform state. I am using Azure Storage Account for it.
   backend "azurerm" {
     resource_group_name  = "RG-AVE"
     storage_account_name = "ave"

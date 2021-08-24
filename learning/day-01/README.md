@@ -87,3 +87,8 @@ To setup Build and Release pipeline to build and deploy terraform script, we nee
 
 
 ### Release pipeline
+![image](https://user-images.githubusercontent.com/84455469/130582569-55c3cd82-be03-433a-930b-40a398809746.png)
+
+![image](https://user-images.githubusercontent.com/84455469/130583438-cba170bc-0bde-4b7e-8d63-e163b0e51da8.png)
+
+![image](https://user-images.githubusercontent.com/84455469/130583845-983debf2-d8d3-4cf5-a1d6-a65e3cdd199d.png)

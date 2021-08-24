@@ -1,4 +1,19 @@
 # Terraform Learning - Day 02
+Here I am going to use Terraform Cloud instead for Azure Storage Account for Terraform State Management. To do this you have to add below setting in your main.tf file withing terraform code block.
+
+```
+# Backend to store Terraform state. You can use Azure Storage Account or Terraform Cloud and so on for it.  
+backend "remote" {
+  hostname = "app.terraform.io"
+  organization = "AV"
+
+  workspaces {
+    name = "terraform-azure"
+    # prefix = "my-app-"    # For multiple workspaces 
+  }
+}
+  
+```
 
 ### Learning Steps
 

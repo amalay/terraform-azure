@@ -2,7 +2,7 @@
 
 ### Learning Steps
 
-#### Environment Setup
+#### Environment setup at your local machine
 1. Install VS Code if not installed already.
 2. Install Azure CLI if not installed already.
 3. Check the Azure CLI version by executing this command <b>az --version</b> on your terminal in VS code.
@@ -11,7 +11,7 @@
 6. Download Terraform for Windows 32/64 bit and install it on your machine. (https://www.terraform.io/downloads.html)
 7. Validate terraform whether it is installed successfully or not by executing this command <b> terraform -v or terraform -help </b> on your terminal in VS code.
 
-#### Project Setup
+#### Project setup at your local machine
 1. Create a file <b>main.tf</b> on root folder
 2. Add below code snnipet in it:
 
@@ -44,7 +44,7 @@ resource "azurerm_resource_group" "rg" {
 
 4. Execute below commands one by one.
 
-#### Commands
+#### Commands to execute from your local machine terminal
 > <b>az login</b> - To login to azure.
 
 > <b>az account list</b> - To see the list of your azure subscription.
@@ -72,5 +72,17 @@ resource "azurerm_resource_group" "rg" {
 #### Validate on Azure portal
 ![image](https://user-images.githubusercontent.com/84455469/130459762-b3db998d-387d-4c48-aceb-08fbf41123d8.png)
 
+### Maintaining terraform state
+There are various way to maintain terraform state. Here I am using Azure Storage Account to maintain terraform state. Why terraform state is needed to manage? Because when we deploy the same script multiple times either through your local machine or any DevOps tools, terraform must know that what all the resources deployed already and find out the delta changes to deploy.
+
+## Setup CI/CD pipeline for it
+To setup Build and Release pipeline to build and deploy terraform script, we need <b>Azure Service Connection</b> and <b>Azure Storage Account</b>.
+
+### Build pipeline
+
+![image](https://user-images.githubusercontent.com/84455469/130579686-7dcf6317-e683-41f1-807d-87e6a1b74b6d.png)
+
+![image](https://user-images.githubusercontent.com/84455469/130580354-0669c36b-6571-406d-8412-c75aeff84253.png)
 
 
+### Release pipeline

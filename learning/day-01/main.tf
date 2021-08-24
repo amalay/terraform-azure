@@ -11,10 +11,10 @@ terraform {
 
   # Backend to store Terraform state. You can use Azure Storage Account or Terraform Cloud and so on for it.
   backend "azurerm" {    
-    storage_account_name = var.storage_account_name
-    container_name       = var.storage_account_container_name    
-    resource_group_name  = var.storage_account_resource_group_name
-    key                  = var.terraform_state_name
+    storage_account_name = "ave"
+    container_name       = "terraformstate"    
+    resource_group_name  = "RG-AVE"
+    key                  = "dev.terraform.tfstate"
   }
 
   required_version = ">= 0.14.9"

@@ -84,11 +84,19 @@ To setup Build and Release pipeline to build and deploy terraform script, we nee
 
 ![image](https://user-images.githubusercontent.com/84455469/130580537-9fb945ff-00a4-47fa-bdb2-38b4cad6cf81.png)
 
-
-
 ### Release pipeline
 ![image](https://user-images.githubusercontent.com/84455469/130582569-55c3cd82-be03-433a-930b-40a398809746.png)
 
 ![image](https://user-images.githubusercontent.com/84455469/130583438-cba170bc-0bde-4b7e-8d63-e163b0e51da8.png)
 
 ![image](https://user-images.githubusercontent.com/84455469/130583845-983debf2-d8d3-4cf5-a1d6-a65e3cdd199d.png)
+
+### Validate Build and Release
+![image](https://user-images.githubusercontent.com/84455469/130585441-03c302d0-8a14-48bf-b33c-28e0e0654734.png)
+
+![image](https://user-images.githubusercontent.com/84455469/130586260-208ca642-9724-4ab9-b94c-f6908433cd6c.png)
+
+### Validate on Azure portal
+![image](https://user-images.githubusercontent.com/84455469/130587797-e2126890-7556-439d-ae58-83e4042e7115.png)
+
+![image](https://user-images.githubusercontent.com/84455469/130587967-ad797c87-e3fa-4b03-b5f7-1927ae767b18.png)

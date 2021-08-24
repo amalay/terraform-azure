@@ -8,7 +8,7 @@ backend "remote" {
   organization = "<Your organization name in terraform cloud>"  # Ex. "AV"
 
   workspaces {
-    name = "Your repository name in terraform cloud"            # Ex. "terraform-azure"
+    name = "Your workspace name in terraform cloud"            # Ex. "terraform-azure"
     # prefix = "my-app-"    # For multiple workspaces           
   }
 }
@@ -16,6 +16,11 @@ backend "remote" {
 ```
 
 ### Learning Steps
+1. You need to have Terraform Cloud account. If not having, create it here https://app.terraform.io/
+2. Create an organization.
+3. Create a workspace withing the organization.
+4. On VS terminal execute this command <b>terraform login</b> to login to terraform first.
+5. Then execute <b>terraform init</b> folowed by <b>terraform validate</b>, <b>terraform plan</b> and <b>terraform apply</b>
 
 ### Importent Note: 
 To run this terraform script locally (e.g. from VS code terminal), the <b>Execution Mode</b> for <b>Terraform Cloud</b> must be set to <b>Local</b>. You can set it by following below steps:

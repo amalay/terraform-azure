@@ -7,6 +7,13 @@ terraform {
     }
   }
 
+  backend "azurerm" {
+    resource_group_name  = "RG-AVE"
+    storage_account_name = "ave"
+    container_name       = "terraformstate "
+    key                  = "terraform.tfstate"
+  }
+
   required_version = ">= 0.14.9"
 }
 

@@ -2,7 +2,7 @@
 
 ### Learning Steps
 
-#### Importent Note: 
+### Importent Note: 
 To run this terraform script locally (e.g. from VS code terminal), the <b>Execution Mode</b> for <b>Terraform Cloud</b> must be set to <b>Local</b>. You can set it by following below steps:
 
 1. Go to terraform cloud (https://app.terraform.io/) and login with your account.

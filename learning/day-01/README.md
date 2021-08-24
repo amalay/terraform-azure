@@ -76,7 +76,7 @@ resource "azurerm_resource_group" "rg" {
 ### Maintaining terraform state
 There are various way to maintain terraform state. Here I am using Azure Storage Account to maintain terraform state. Why terraform state is needed to manage? Because when we deploy the same script multiple times either through your local machine or any DevOps tools, terraform must know that what all the resources deployed already and find out the delta changes to deploy.
 
-## Setup CI/CD pipeline for it
+## Setup CI/CD pipeline to run Terraform scripts
 To setup Build and Release pipeline to build and deploy terraform script, we need <b>Azure Service Connection</b> and <b>Azure Storage Account</b>.
 
 ### Build pipeline

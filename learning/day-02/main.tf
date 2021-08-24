@@ -11,10 +11,12 @@ terraform {
 
   # Backend to store Terraform state. You can use Azure Storage Account or Terraform Cloud and so on for it.  
   backend "remote" {
-    organization = var.terraform_cloud_organization_name
+    hostname = "app.terraform.io"
+    organization = "AV"
 
     workspaces {
-      name = var.terraform_cloud_workspace_name
+      name = "terraform-azure"
+      # prefix = "my-app-"    # For multiple workspaces 
     }
   }
 
@@ -31,8 +33,8 @@ resource "azurerm_resource_group" "rg" {
 
   # Optional
   tags = {
-    Environment = "Terraform Learning Day 01"
-    Team = "DevOps"
+    Environment = "Terraform Learning Day 02"
+    Team = "Terraform Cloud"
   }
 }
 

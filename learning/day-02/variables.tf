@@ -33,7 +33,7 @@ variable "terraform_cloud_workspace_name" {
 # Azure Resources Details
 #===================================================================
 variable "resource_group_name" {
-  default = "RG-AV-TF01"
+  default = "RG-AV-TF02"
 }
 
 variable "location" {
@@ -41,9 +41,9 @@ variable "location" {
 }
 
 variable "vnet_name" {
-  default = "avvnet"
+  default = "avvnet2"
 }
 
 variable "nsg_name" {
-  default = "avnsg"
+  default = "avnsg2"
 }

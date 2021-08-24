@@ -69,8 +69,9 @@ resource "azurerm_resource_group" "rg" {
 
 > <b>terraform destroy</b> - It will destroy all the resources from cloud subscription.
 
-#### Validate on Azure portal
-![image](https://user-images.githubusercontent.com/84455469/130459762-b3db998d-387d-4c48-aceb-08fbf41123d8.png)
+#### Validate on Azure portal after deployment from local machine
+![image](https://user-images.githubusercontent.com/84455469/130588372-849b2893-8501-4941-9bda-e1722393c728.png)
+
 
 ### Maintaining terraform state
 There are various way to maintain terraform state. Here I am using Azure Storage Account to maintain terraform state. Why terraform state is needed to manage? Because when we deploy the same script multiple times either through your local machine or any DevOps tools, terraform must know that what all the resources deployed already and find out the delta changes to deploy.
@@ -96,7 +97,7 @@ To setup Build and Release pipeline to build and deploy terraform script, we nee
 
 ![image](https://user-images.githubusercontent.com/84455469/130586260-208ca642-9724-4ab9-b94c-f6908433cd6c.png)
 
-### Validate on Azure portal
+### Validate on Azure portal after deployment through Azure DevOps
 ![image](https://user-images.githubusercontent.com/84455469/130587797-e2126890-7556-439d-ae58-83e4042e7115.png)
 
 ![image](https://user-images.githubusercontent.com/84455469/130587967-ad797c87-e3fa-4b03-b5f7-1927ae767b18.png)

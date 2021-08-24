@@ -5,11 +5,11 @@ Here I am going to use Terraform Cloud instead for Azure Storage Account for Ter
 # Backend to store Terraform state. You can use Azure Storage Account or Terraform Cloud and so on for it.  
 backend "remote" {
   hostname = "app.terraform.io"
-  organization = "AV"
+  organization = "<Your organization name in terraform cloud>"  # Ex. "AV"
 
   workspaces {
-    name = "terraform-azure"
-    # prefix = "my-app-"    # For multiple workspaces 
+    name = "Your repository name in terraform cloud"            # Ex. "terraform-azure"
+    # prefix = "my-app-"    # For multiple workspaces           
   }
 }
   

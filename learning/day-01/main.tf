@@ -1,5 +1,6 @@
 # Configure the Azure provider
 terraform {
+
   # Provider
   required_providers {
     azurerm = {
@@ -8,12 +9,12 @@ terraform {
     }
   }
 
-  # Backend to store Terraform state. I am using Azure Storage Account for it.
-  backend "azurerm" {
-    resource_group_name  = "RG-AVE"
-    storage_account_name = "ave"
-    container_name       = "terraformstate"
-    key                  = "terraform.tfstate"
+  # Backend to store Terraform state. You can use Azure Storage Account or Terraform Cloud and so on for it.
+  backend "azurerm" {    
+    storage_account_name = var.storage_account_name
+    container_name       = var.storage_account_container_name    
+    resource_group_name  = var.storage_account_resource_group_name
+    key                  = var.terraform_state_name
   }
 
   required_version = ">= 0.14.9"
@@ -23,24 +24,26 @@ provider "azurerm" {
   features {}
 }
 
-# 1. Create a Resource Group
-resource "azurerm_resource_group" "rg" {
-  # name     = "RG-AV-TF01"
+resource "azurerm_resource_group" "rg" {  
   name     = var.resource_group_name
-  location = "westus2"
+  location = var.location
 
   # Optional
   tags = {
-        Environment = "Terraform Learning Day 01"
-        Team = "DevOps"
-    }
+    Environment = "Terraform Learning Day 01"
+    Team = "DevOps"
+  }
 }
 
-# 2. Create a virtual network
-resource "azurerm_virtual_network" "vnet" {
-    # name                = "avvnet"
-    name                = var.vnet_name
-    address_space       = ["10.0.0.0/16"]    
-    resource_group_name = azurerm_resource_group.rg.name
-    location            = azurerm_resource_group.rg.location
+resource "azurerm_virtual_network" "vnet" {    
+  name                = var.vnet_name    
+  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.rg.location
+  address_space       = ["10.0.0.0/16"]    
+}
+
+resource "azurerm_network_security_group" "sec-nsg"{
+  name                = var.nsg_name    
+  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.rg.location    
 }

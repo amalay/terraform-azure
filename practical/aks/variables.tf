@@ -56,7 +56,7 @@ variable log_analytics_workspace_sku {
 }
 
 variable "acr_name" {  
-  default     = "avacr"
+  default     = "avacrdev"
 }
 
 variable "acr_sku" {  

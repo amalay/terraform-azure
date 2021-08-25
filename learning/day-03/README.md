@@ -1,5 +1,5 @@
 # Terraform Learning - Day 03
-
+Here I am going to extend my day 02 learning and make it scalable/manageable for DEV and PROD environment using same Terraform Cloud state management technique.
 
 ### Learning Steps
 
@@ -9,7 +9,7 @@
 4. On VS terminal execute this command <b>terraform login</b> to login to terraform first.
 5. Then execute <b>terraform init</b> folowed by <b>terraform validate</b>, <b>terraform plan</b> and <b>terraform apply</b>.
 
-Now I am going to devide our project structure in two parts, one is for dev environment and another is for prod environment as below:
+Now I am going to devide our project structure in two parts, one is for DEV environment and another is for PROd environment as below:
 
 ![image](https://user-images.githubusercontent.com/84455469/130738953-21e150f3-f6e0-4842-9e6b-caf8f4eee0e8.png)
 

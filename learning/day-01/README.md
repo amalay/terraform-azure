@@ -44,6 +44,62 @@ resource "azurerm_resource_group" "rg" {
 
 4. Execute below commands one by one.
 
+#### Setup Terraform State
+There are multiple way to setup and manage terraform state e.g. <b>Local</b> or <b>Remote</b>. 
+On Remote, again there are multiple way to manage it. e.g. <b>Using Azure Storage Account</b>, <b>Using Terraform Cloud</b> and so on.
+
+##### Local State Management
+There is not need to do anything for for terraform state management on Local machine. The above code snnipet under project setup section is sufficient.
+
+##### Remote State Management
+For Remote state management, you have to introduce backend code block inside terraform code block.
+
+###### Example
+```
+# Backend to store Terraform state in case of Azure Storage Account
+backend "azurerm" {    
+  .........
+  .........
+  .........
+}
+```
+
+OR
+
+```
+# Backend to store Terraform state in case of Terraform Cloud
+backend "remote" {    
+  .........
+  .........
+  .........
+}
+```
+
+##### Remote State Management - Using Azure Storage Account
+```
+# Backend to store Terraform state. You can use Azure Storage Account or Terraform Cloud and so on for it.
+  backend "azurerm" {    
+    storage_account_name = "<Azure Storage Account Name>"                               # e.g "ave"
+    container_name       = "<Azure Storage Account Container Name>"                     # e.g. "terraformstate"
+    resource_group_name  = "<Azure Resource Group Name Where Storage Account Exist>"    # e.g. "RG-AVE"
+    key                  = "<Terraform State Key>"                                      # e.g. "dev.terraform.tfstate"
+  }
+```
+
+##### Remote State Management - Using Terraform Cloud
+```
+# Backend to store Terraform state. You can use Azure Storage Account or Terraform Cloud and so on for it.  
+  backend "remote" {
+    hostname = "app.terraform.io"
+    organization = "<Your organization name in terraform cloud>"  # Ex. "AV"
+
+    workspaces {
+      name = "Your workspace name in terraform cloud"            # Ex. "terraform-azure"
+      # prefix = "my-app-"    # For multiple workspaces           
+    }
+  }
+```
+
 #### Commands to execute from your local machine terminal
 > <b>az login</b> - To login to azure.
 

@@ -32,7 +32,7 @@ To solve this issue we have two option to execute our terraform configuration :
 
 Below are the steps on how to do either a local execution or a Terraform Cloud execution:
 
-#### Local Execution
+## Local Execution with Terraform Cloud
 To do local execution, you have to set the local option in your terraform cloud by following the below steps:
 
 1. Go to terraform cloud (https://app.terraform.io/) and login with your account.
@@ -65,18 +65,19 @@ But at the same time if we run the plan or apply command on prod workspace then 
 
 ```
 > PS C:\GitHub\terraform-azure\learning\day-03\dev> terraform plan
+> PS C:\GitHub\terraform-azure\learning\day-03\dev> terraform apply
 ```
 
-![image](https://user-images.githubusercontent.com/84455469/130751569-f78739c9-c7e3-4a86-83bd-677e331bfce7.png)
-
+##### Terraform Result
 ![image](https://user-images.githubusercontent.com/84455469/130751981-c61dd52a-05ca-44ff-901f-1a35ac9d65b1.png)
 
+##### Terraform State
 ![image](https://user-images.githubusercontent.com/84455469/130752065-621497aa-b9be-4ca3-900a-26e09eace376.png)
 
 ##### Validate created resources on Azure Protal
 ![image](https://user-images.githubusercontent.com/84455469/130752586-2280b3ff-5f68-4b3e-b711-b66c156d1ecf.png)
 
-#### Terraform Cloud Execution
+## Remote Execution with Terraform Cloud
 To manage Terraform state remotely and execute our Terraform configuration remotely through Terraform Cloud's, we need to configure Azure Authentication in Terraform Cloud. This can be done through AAD Service Principal. That means we should have AAD Service Principal. And we have to store this AAD Service Principal in Terraform Cloud's securily. We can choose Terraform Cloud's environment variables to store it. As shown below:
 
 ```
@@ -107,6 +108,7 @@ Here you can see that plan is finished and to apply the command, it is waiting f
 ![image](https://user-images.githubusercontent.com/84455469/130747655-284c6e2a-3b03-4535-bace-699c7dc8610b.png)
 
 Once get the confirmation, it will start applying the terraform script and create the azure resources on the azure portal. After finished, you can see the below screen:
+##### Terraform Result
 ![image](https://user-images.githubusercontent.com/84455469/130747808-f576c173-7ac6-43f2-978c-ee7b661131bf.png)
 
 ##### Terraform State

@@ -64,10 +64,12 @@ But at the same time if we run the plan or apply command on prod workspace then 
 #### Terraform Cloud Execution
 To manage Terraform state remotely and execute our Terraform configuration remotely through Terraform Cloud's, we need to configure Azure Authentication in Terraform Cloud. This can be done through AAD Service Principal. That means we should have AAD Service Principal. And we have to store this AAD Service Principal in Terraform Cloud's securily. We can choose Terraform Cloud's environment variables to store it. As shown below:
 
+```
 ARM_CLIENT_ID = "dd38c6ff-1c1a-41df-82c8-5bdsadsad332"
 ARM_CLIENT_SECRET = "543543l5nndfgg-6451-40ad-b0f7-89ddfd234f"
 ARM_SUBSCRIPTION_ID = "sf345gf-81bd-4e97-977b-s435dfds3"
 ARM_TENANT_ID = "ff34ggc-af72-454e-8dc0-435345fdg"
+```
 
 ![image](https://user-images.githubusercontent.com/84455469/130744095-db0e1241-7710-4478-8d3f-64fe771c9b66.png)
 

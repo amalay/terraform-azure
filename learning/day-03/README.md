@@ -3,6 +3,14 @@
 
 ### Learning Steps
 
+1. You need to have Terraform Cloud account. If not having, create it here https://app.terraform.io/
+2. Create an organization.
+3. Create a workspace withing the organization.
+4. On VS terminal execute this command <b>terraform login</b> to login to terraform first.
+5. Then execute <b>terraform init</b> folowed by <b>terraform validate</b>, <b>terraform plan</b> and <b>terraform apply</b>.
+
+Now I am going to devide our project structure in two parts, one is for dev environment and another is for prod environment as below:
+
 ![image](https://user-images.githubusercontent.com/84455469/130738953-21e150f3-f6e0-4842-9e6b-caf8f4eee0e8.png)
 
 When we run <b>terraform init</b> command, It will the workspace automatically in Terraform Cloud if it is not exists already. To experience it execute the command from your VS terminal:

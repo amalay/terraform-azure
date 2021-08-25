@@ -15,8 +15,7 @@ terraform {
     organization = "AV"
 
     workspaces {
-      name = "terraform-azure"
-      # prefix = "my-app-"    # For multiple workspaces 
+      name = "terraform-azure-prod"
     }
   }
 

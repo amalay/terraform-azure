@@ -75,4 +75,10 @@ ARM_TENANT_ID = "ff34ggc-af72-454e-8dc0-435345fdg"
 
 ![image](https://user-images.githubusercontent.com/84455469/130747207-06dce60d-982f-4595-bf1f-980ff56ca5de.png)
 
+![image](https://user-images.githubusercontent.com/84455469/130747655-284c6e2a-3b03-4535-bace-699c7dc8610b.png)
 
+![image](https://user-images.githubusercontent.com/84455469/130747808-f576c173-7ac6-43f2-978c-ee7b661131bf.png)
+
+![image](https://user-images.githubusercontent.com/84455469/130748823-dbe9940e-aa82-44ba-a746-25b29ca88942.png)
+
+![image](https://user-images.githubusercontent.com/84455469/130748510-0aa2e88d-96ba-4172-b0cc-da1d98aa59ba.png)

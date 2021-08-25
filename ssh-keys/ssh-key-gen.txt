@@ -1,0 +1,28 @@
+# Create Folder
+mkdir $HOME/ssh-keys
+
+# Create SSH Keys
+ssh-keygen \
+    -m PEM \
+    -t rsa \
+    -b 4096 \
+    -C "azureuser@myserver" \
+    -f ~/ssh-keys/av-tf-aks-ssh-key \
+
+Note: We will have passphrase as : empty when asked
+
+# List Files
+ls -lrt $HOME/ssh-keys
+Private File: av-tf-aks-ssh-key (To be stored safe with us)
+Public File : av-tf-aks-ssh-key.pub (To be uploaded to Azure DevOps)
+
+
+--------------------------------------------------
+1. Open command prompt
+2. Go to your desired folder where you want to generate the ssh keys e.g. "C:\WorkSpace\GitHub\terraform-azure\ssh-keys"
+3. C:\WorkSpace\GitHub\terraform-azure\ssh-keys>
+4. Execute the command as below:
+5. C:\WorkSpace\GitHub\terraform-azure\ssh-keys>ssh-keygen -m PEM -t rsa -b 4096 -C "azureuser@myserver" -f av-tf-aks-ssh-key
+6. it will generate two files as below:
+Private File: av-tf-aks-ssh-key (To be stored safe with us)
+Public File : av-tf-aks-ssh-key.pub (To be uploaded to Azure DevOps)

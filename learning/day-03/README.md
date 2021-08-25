@@ -61,6 +61,21 @@ OR
 
 But at the same time if we run the plan or apply command on prod workspace then we will still get the same error because it is not set for local execution.
 
+#### Lets execute terraform plan and terraform apply command on dev workspace as below:
+
+```
+> PS C:\GitHub\terraform-azure\learning\day-03\dev> terraform plan
+```
+
+![image](https://user-images.githubusercontent.com/84455469/130751569-f78739c9-c7e3-4a86-83bd-677e331bfce7.png)
+
+![image](https://user-images.githubusercontent.com/84455469/130751981-c61dd52a-05ca-44ff-901f-1a35ac9d65b1.png)
+
+![image](https://user-images.githubusercontent.com/84455469/130752065-621497aa-b9be-4ca3-900a-26e09eace376.png)
+
+##### Validate created resources on Azure Protal
+![image](https://user-images.githubusercontent.com/84455469/130752586-2280b3ff-5f68-4b3e-b711-b66c156d1ecf.png)
+
 #### Terraform Cloud Execution
 To manage Terraform state remotely and execute our Terraform configuration remotely through Terraform Cloud's, we need to configure Azure Authentication in Terraform Cloud. This can be done through AAD Service Principal. That means we should have AAD Service Principal. And we have to store this AAD Service Principal in Terraform Cloud's securily. We can choose Terraform Cloud's environment variables to store it. As shown below:
 

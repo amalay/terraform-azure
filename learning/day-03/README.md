@@ -70,3 +70,11 @@ ARM_SUBSCRIPTION_ID = "sf345gf-81bd-4e97-977b-s435dfds3"
 ARM_TENANT_ID = "ff34ggc-af72-454e-8dc0-435345fdg"
 
 ![image](https://user-images.githubusercontent.com/84455469/130744095-db0e1241-7710-4478-8d3f-64fe771c9b66.png)
+
+![image](https://user-images.githubusercontent.com/84455469/130746398-7e7e275c-09b9-4edc-8d0a-81a8115229d2.png)
+
+![image](https://user-images.githubusercontent.com/84455469/130746541-bf175634-0644-47cd-a2aa-059523d83453.png)
+
+![image](https://user-images.githubusercontent.com/84455469/130747207-06dce60d-982f-4595-bf1f-980ff56ca5de.png)
+
+

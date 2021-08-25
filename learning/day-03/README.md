@@ -44,7 +44,21 @@ To do local execution, you have to set the local option in your terraform cloud 
 7. Click on Save Settings.
 
 Refer screenshot below:
-![image](https://user-images.githubusercontent.com/84455469/130740631-15d5dfd4-b700-4237-82c7-d6cc45174f45.png)
+
+![image](https://user-images.githubusercontent.com/84455469/130741777-76fc28f6-dec1-4a0d-83dc-1e8a9b577c65.png)
 
 In this case only terraform state will be managed on terraform cloud but the execution of the terraform configuration will be happend locally.
 
+Now if you apply below commands on your dev workspace then it will be executed successfully without throwing any error
+
+```
+> PS C:\GitHub\terraform-azure\learning\day-03\dev> terraform plan
+
+OR 
+
+> PS C:\GitHub\terraform-azure\learning\day-03\dev> terraform apply
+```
+
+But at the same time if we run the plan or apply command on prod workspace then we will still get the same error because it is not set for local execution.
+
+#### Terraform Cloud Execution

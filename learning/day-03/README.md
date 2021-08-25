@@ -73,6 +73,15 @@ ARM_TENANT_ID = "ff34ggc-af72-454e-8dc0-435345fdg"
 
 ![image](https://user-images.githubusercontent.com/84455469/130744095-db0e1241-7710-4478-8d3f-64fe771c9b66.png)
 
+Once you apply <b>terraform apply command</b> as below:
+
+```
+> PS C:\GitHub\terraform-azure\learning\day-03\prod> terraform apply
+
+```
+
+You will see the below screen on Terraform Cloud:
+
 ![image](https://user-images.githubusercontent.com/84455469/130747518-c1553058-3e26-4e53-85ab-354387698f2e.png)
 
 ![image](https://user-images.githubusercontent.com/84455469/130747207-06dce60d-982f-4595-bf1f-980ff56ca5de.png)

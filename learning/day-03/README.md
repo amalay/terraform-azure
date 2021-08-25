@@ -36,9 +36,9 @@ Because Terraform Cloud doesn't just store remote state; it will also remotely e
 
 To solve this issue we have two option to execute our terraform configuration :
 1. We can remotely execute our Terraform code in Terraform Cloud; or
-2. We can choose to disable this feature and execute our code in Azure Cloud Shell, which will only use the remote state feature of Terraform Cloud.
+2. We can choose to disable this feature and execute Terraform code in Azure Cloud Shell locally using VS terminal, which will only use the remote state feature of Terraform Cloud.
 
-Below are the steps on how to do either a local execution or a Terraform Cloud execution:
+Below are the steps on how to do either a Local Execution or a Terraform Cloud Execution:
 
 ## Local Execution with Terraform Cloud
 To do local execution, you have to set the local option in your terraform cloud by following the below steps:

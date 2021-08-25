@@ -73,7 +73,7 @@ ARM_TENANT_ID = "ff34ggc-af72-454e-8dc0-435345fdg"
 
 ![image](https://user-images.githubusercontent.com/84455469/130744095-db0e1241-7710-4478-8d3f-64fe771c9b66.png)
 
-Once you apply <b>terraform apply command</b> as below:
+Once you apply <b>terraform apply</b> command as below:
 
 ```
 > PS C:\GitHub\terraform-azure\learning\day-03\prod> terraform apply
@@ -84,12 +84,18 @@ You will see the below screen on Terraform Cloud:
 
 ![image](https://user-images.githubusercontent.com/84455469/130747518-c1553058-3e26-4e53-85ab-354387698f2e.png)
 
+If you click on See Details button, you will see the below screen:
+
 ![image](https://user-images.githubusercontent.com/84455469/130747207-06dce60d-982f-4595-bf1f-980ff56ca5de.png)
 
+Here you can see that plan is finished and to apply the command, it is waiting for the confirmation.
 ![image](https://user-images.githubusercontent.com/84455469/130747655-284c6e2a-3b03-4535-bace-699c7dc8610b.png)
 
+Once get the confirmation, it will start applying the terraform script and create the azure resources on the azure portal. After finished, you can see the below screen:
 ![image](https://user-images.githubusercontent.com/84455469/130747808-f576c173-7ac6-43f2-978c-ee7b661131bf.png)
 
+##### Terraform State
 ![image](https://user-images.githubusercontent.com/84455469/130748823-dbe9940e-aa82-44ba-a746-25b29ca88942.png)
 
+##### Validate on Azure Portal:
 ![image](https://user-images.githubusercontent.com/84455469/130748510-0aa2e88d-96ba-4172-b0cc-da1d98aa59ba.png)

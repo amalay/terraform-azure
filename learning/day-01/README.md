@@ -44,6 +44,34 @@ resource "azurerm_resource_group" "rg" {
 
 4. Execute below commands one by one.
 
+#### Setup Terraform State
+There are multiple way to setup and manage terraform state e.g. <b>Local</b>, <b>Azure Storage Account</b>, <b>Terraform Cloud</b>
+
+##### Using Azure Storage Account
+```
+# Backend to store Terraform state. You can use Azure Storage Account or Terraform Cloud and so on for it.
+  backend "azurerm" {    
+    storage_account_name = "ave"
+    container_name       = "terraformstate"    
+    resource_group_name  = "RG-AVE"
+    key                  = "dev.terraform.tfstate"
+  }
+```
+
+##### Using Terraform Cloud
+```
+# Backend to store Terraform state. You can use Azure Storage Account or Terraform Cloud and so on for it.  
+  backend "remote" {
+    hostname = "app.terraform.io"
+    organization = "AV"
+
+    workspaces {
+      name = "terraform-azure"
+      # prefix = "my-app-"    # For multiple workspaces 
+    }
+  }
+```
+
 #### Commands to execute from your local machine terminal
 > <b>az login</b> - To login to azure.
 

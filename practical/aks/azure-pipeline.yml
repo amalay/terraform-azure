@@ -43,6 +43,11 @@ stages:
           terraformVersion: 'latest'
 
       - task: TerraformCLI@0
+        displayName: 'check terraform version'
+        inputs:
+          command: version
+
+      - task: TerraformCLI@0
         displayName: Terraform Init
         inputs:
           command: 'init'

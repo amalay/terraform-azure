@@ -9,7 +9,7 @@ resource "azurerm_log_analytics_workspace" "dev" {
     name                = var.log_analytics_workspace_name   
 
     resource_group_name = azurerm_resource_group.dev.name
-    location            = azurerm_resource_group.dev.location
+    location            = azurerm_resource_group.dev.location   # refer https://azure.microsoft.com/global-infrastructure/services/?products=monitor for log analytics available regions
 
     sku                 = var.log_analytics_workspace_sku
 }

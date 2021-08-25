@@ -45,18 +45,16 @@ variable "ssh_public_key" {
     default = "~/.ssh/id_rsa.pub"
 }
 
-# refer https://azure.microsoft.com/global-infrastructure/services/?products=monitor for log analytics available regions
 variable log_analytics_workspace_name {
     default = "avloganalytics"
 }
 
-# refer https://azure.microsoft.com/pricing/details/monitor/ for log analytics pricing 
 variable log_analytics_workspace_sku {
-    default = "PerGB2018"
+    default = "PerGB2018"   # refer https://azure.microsoft.com/pricing/details/monitor/ for log analytics pricing 
 }
 
 variable "acr_name" {  
-  default     = "avacrdev"
+  default     = "avacrdev"  // It should be globally unique
 }
 
 variable "acr_sku" {  

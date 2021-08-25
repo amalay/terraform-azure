@@ -45,9 +45,10 @@ resource "azurerm_resource_group" "rg" {
 4. Execute below commands one by one.
 
 #### Setup Terraform State
-There are multiple way to setup and manage terraform state e.g. <b>Local</b>, <b>Azure Storage Account</b>, <b>Terraform Cloud</b>
+There are multiple way to setup and manage terraform state e.g. <b>Local</b> or <b>Remote</b>. 
+On Remote, again there are multiple way to manage it. e.g. <b>Using Azure Storage Account</b>, <b>Using Terraform Cloud</b> and so on.
 
-##### Using Azure Storage Account
+##### Remote State Management - Using Azure Storage Account
 ```
 # Backend to store Terraform state. You can use Azure Storage Account or Terraform Cloud and so on for it.
   backend "azurerm" {    
@@ -58,7 +59,7 @@ There are multiple way to setup and manage terraform state e.g. <b>Local</b>, <b
   }
 ```
 
-##### Using Terraform Cloud
+##### Remote State Management - Using Terraform Cloud
 ```
 # Backend to store Terraform state. You can use Azure Storage Account or Terraform Cloud and so on for it.  
   backend "remote" {

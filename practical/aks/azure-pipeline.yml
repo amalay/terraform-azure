@@ -37,7 +37,7 @@ stages:
           artifact: 'terraform'
           publishLocation: 'pipeline'
 
-      - task: TerraformInstaller
+      - task: TerraformInstaller@0
         displayName: Terraform Install
         inputs:
           terraformVersion: 'latest'

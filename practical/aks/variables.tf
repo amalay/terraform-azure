@@ -2,11 +2,11 @@
 # Azure Resources Details
 #===================================================================
 variable "environment" {
-  default = "DEV"
+  default = "dev"
 }
 
 variable "resource_group_name" {
-  default = "RG-AV-TF-AKS"
+  default = "rg-av-tf-aks"
 }
 
 variable "location" {
@@ -54,7 +54,7 @@ variable log_analytics_workspace_sku {
 }
 
 variable "acr_name" {  
-  default     = "avacrdev"  // It should be globally unique
+  default     = "avacr"  // It should be globally unique
 }
 
 variable "acr_sku" {  

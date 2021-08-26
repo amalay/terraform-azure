@@ -101,3 +101,8 @@ Upload ssh-key to Azure DevOps as per the above steps.
 
 ### Steps to Setup Release Pipeline
 
+![image](https://user-images.githubusercontent.com/84455469/130953011-453ed032-f517-4d67-b654-8b7626fbfd18.png)
+
+![image](https://user-images.githubusercontent.com/84455469/130956256-586b2afd-2132-4aec-8718-63dd5213cca8.png)
+
+

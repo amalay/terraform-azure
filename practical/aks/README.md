@@ -65,7 +65,7 @@ Please refer below screenshot:
 
 This azure-pipeline.yml file contains three stages as below:
 
-##### Stage 1: Build, Publish Artifacts and Validate Terraform Scripts
+##### Stage 1: Install Terraform CLI, Build, Publish Artifacts and Validate Terraform Scripts
 ##### Stage 2: Deploy to DEV environment based.
 ##### Stage 3: Deploy to UAT environment based.
 

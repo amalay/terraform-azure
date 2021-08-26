@@ -175,7 +175,7 @@ stages:
                 command: 'apply'
                 workingDirectory: '$(Pipeline.Workspace)/terraform'
                 environmentServiceName: '$(AzureServiceConnection)'
-                commandOptions: '$(Pipeline.Workspace)/terraform/$(TestEnv)-$(Build.BuildId).out'
+                commandOptions: '$(Pipeline.Workspace)/terraform/$(UATEnv)-$(Build.BuildId).out'
                 allowTelemetryCollection: false
 
 

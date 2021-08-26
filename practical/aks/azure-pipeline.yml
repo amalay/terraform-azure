@@ -33,14 +33,14 @@ stages:
       - task: PublishPipelineArtifact@1
         displayName: Publish Artifacts
         inputs:
-          targetPath: '$(System.DefaultWorkingDirectory)'
+          targetPath: '$(System.DefaultWorkingDirectory)/practical/aks'
           artifact: 'terraform'
           publishLocation: 'pipeline'
 
       - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-installer.TerraformInstaller@0
         displayName: Terraform Install
         inputs:
-          terraformVersion: 0.14.3
+          terraformVersion: 'latest'
 
       - task: TerraformCLI@0
         displayName: 'check terraform version'

@@ -33,7 +33,7 @@ stages:
       - task: PublishPipelineArtifact@1
         displayName: Publish Artifacts
         inputs:
-          targetPath: '$(System.DefaultWorkingDirectory)/practical/aks/*.tf'
+          targetPath: '$(System.DefaultWorkingDirectory)/practical/aks'
           artifact: 'terraform'
           publishLocation: 'pipeline'
 

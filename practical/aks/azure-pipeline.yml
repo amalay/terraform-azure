@@ -52,7 +52,7 @@ stages:
         displayName: Terraform Init
         inputs:
           command: 'init'
-          workingDirectory: '$(ProjectPath)'
+          workingDirectory: '$(Pipeline.Workspace)/terraform'
           backendType: 'azurerm'
           backendServiceArm: '$(AzureServiceConnection)'
           backendAzureRmResourceGroupName: '$(TFStateResourceGroup)'
@@ -65,7 +65,7 @@ stages:
         displayName: Terraform Validate
         inputs:
           command: 'validate'
-          workingDirectory: '$(ProjectPath)'
+          workingDirectory: '$(Pipeline.Workspace)/terraform'
           allowTelemetryCollection: false
 
 

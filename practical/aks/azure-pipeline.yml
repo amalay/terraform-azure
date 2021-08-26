@@ -14,8 +14,8 @@ variables:
   TFStateStorageAccountContainer: terraformstate
   TFStateKey: aks.terraform.tfstate
 
-  DevEnv: dev
-  TestEnv: test
+  DEVEnv: dev
+  UATEnv: uat
 
   SSHKeyFileName: "av-tf-aks-ssh-key.pub"
 
@@ -76,13 +76,13 @@ stages:
 ## Step-3: Terraform Initialize (State Storage to store in Azure Storage Account for AKS Dev Cluster)
 ## Step-4: Terraform Plan (Create Plan)
 ## Step-5: Terraform Apply (Use the plan created in previous step)
-- stage: Deploy_DEV
+- stage: Deploy
   jobs:
     - deployment: DEV
-      displayName: Deploy To AKS Dev Cluster
+      displayName: Deploy To AKS DEV Cluster
       pool:
         vmImage: 'ubuntu-latest'
-      environment: $(DevEnv)      
+      environment: $(DEVEnv)      
       strategy:
         runOnce:
           deploy:
@@ -103,7 +103,7 @@ stages:
                 backendAzureRmResourceGroupName: '$(TFStateResourceGroup)'
                 backendAzureRmStorageAccountName: '$(TFStateStorageAccount)'
                 backendAzureRmContainerName: '$(TFStateStorageAccountContainer)'
-                backendAzureRmKey: 'aks.$(DevEnv).terraform.tfstate'
+                backendAzureRmKey: 'aks.$(DEVEnv).terraform.tfstate'
                 allowTelemetryCollection: false
 
             - task: TerraformCLI@0
@@ -112,7 +112,7 @@ stages:
                 command: 'plan'
                 workingDirectory: '$(Pipeline.Workspace)/terraform'
                 environmentServiceName: '$(AzureServiceConnection)'
-                commandOptions: '-var ssh_public_key=$(sshkey.secureFilePath) -var environment=$(DevEnv) -out $(Pipeline.Workspace)/terraform/$(DevEnv)-$(Build.BuildId).out'
+                commandOptions: '-var ssh_public_key=$(sshkey.secureFilePath) -var environment=$(DEVEnv) -out $(Pipeline.Workspace)/terraform/$(DEVEnv)-$(Build.BuildId).out'
                 allowTelemetryCollection: false
 
             - task: TerraformCLI@0
@@ -121,8 +121,62 @@ stages:
                 command: 'apply'
                 workingDirectory: '$(Pipeline.Workspace)/terraform'
                 environmentServiceName: '$(AzureServiceConnection)'
-                commandOptions: '$(Pipeline.Workspace)/terraform/$(DevEnv)-$(Build.BuildId).out'
+                commandOptions: '$(Pipeline.Workspace)/terraform/$(DEVEnv)-$(Build.BuildId).out'
                 allowTelemetryCollection: false
 
-                
+
+# Stage-2: Deploy Stages for UAT
+# Deployment-2: Deploy To AKS UAT Cluster
+## Step-1: Download Secure File
+## Step-2: Terraform Initialize (State Storage to store in Azure Storage Account)
+## Step-3: Terraform Plan 
+## Step-4: Terraform Apply
+    - deployment: UAT
+      dependsOn: DEV
+      displayName: Deploy To AKS UAT Cluster
+      pool:
+        vmImage: 'ubuntu-latest'
+      environment: $(UATEnv)      
+      strategy:
+        runOnce:
+          deploy:
+            steps:            
+            - task: DownloadSecureFile@1
+              displayName: Download SSH Key
+              name: sshkey
+              inputs:
+                secureFile: '$(SSHKeyFileName)'
+
+            - task: TerraformCLI@0
+              displayName: Terraform Init
+              inputs:
+                command: 'init'
+                workingDirectory: '$(Pipeline.Workspace)/terraform'
+                backendType: 'azurerm'
+                backendServiceArm: '$(AzureServiceConnection)'
+                backendAzureRmResourceGroupName: '$(TFStateResourceGroup)'
+                backendAzureRmStorageAccountName: '$(TFStateStorageAccount)'
+                backendAzureRmContainerName: '$(TFStateStorageAccountContainer)'
+                backendAzureRmKey: 'aks.$(UATEnv).terraform.tfstate'
+                allowTelemetryCollection: false
+
+            - task: TerraformCLI@0
+              displayName: Terraform Plan
+              inputs:
+                command: 'plan'
+                workingDirectory: '$(Pipeline.Workspace)/terraform'
+                environmentServiceName: '$(AzureServiceConnection)'
+                commandOptions: '-var ssh_public_key=$(sshkey.secureFilePath) -var environment=$(UATEnv) -out $(Pipeline.Workspace)/terraform/$(UATEnv)-$(Build.BuildId).out'
+                allowTelemetryCollection: false
+
+            - task: TerraformCLI@0
+              displayName: Terraform Apply
+              inputs:
+                command: 'apply'
+                workingDirectory: '$(Pipeline.Workspace)/terraform'
+                environmentServiceName: '$(AzureServiceConnection)'
+                commandOptions: '$(Pipeline.Workspace)/terraform/$(TestEnv)-$(Build.BuildId).out'
+                allowTelemetryCollection: false
+
+
 

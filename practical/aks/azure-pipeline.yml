@@ -58,7 +58,7 @@ stages:
           backendAzureRmResourceGroupName: '$(TFStateResourceGroup)'
           backendAzureRmStorageAccountName: '$(TFStateStorageAccount)'
           backendAzureRmContainerName: '$(TFStateStorageAccountContainer)'
-          backendAzureRmKey: 'aks.terraform.tfstate'
+          backendAzureRmKey: '$(TFStateKey)'
           allowTelemetryCollection: false
 
       - task: TerraformCLI@0
@@ -103,7 +103,7 @@ stages:
                 backendAzureRmResourceGroupName: '$(TFStateResourceGroup)'
                 backendAzureRmStorageAccountName: '$(TFStateStorageAccount)'
                 backendAzureRmContainerName: '$(TFStateStorageAccountContainer)'
-                backendAzureRmKey: 'aks.$(DEVEnv).terraform.tfstate'
+                backendAzureRmKey: '$(DEVEnv).$(TFStateKey)'
                 allowTelemetryCollection: false
 
             - task: TerraformCLI@0
@@ -157,7 +157,7 @@ stages:
                 backendAzureRmResourceGroupName: '$(TFStateResourceGroup)'
                 backendAzureRmStorageAccountName: '$(TFStateStorageAccount)'
                 backendAzureRmContainerName: '$(TFStateStorageAccountContainer)'
-                backendAzureRmKey: 'aks.$(UATEnv).terraform.tfstate'
+                backendAzureRmKey: '$(UATEnv).$(TFStateKey)'
                 allowTelemetryCollection: false
 
             - task: TerraformCLI@0

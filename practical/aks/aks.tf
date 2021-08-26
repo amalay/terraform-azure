@@ -42,7 +42,7 @@ resource "azurerm_kubernetes_cluster" "av" {
     kubernetes_version    = var.kubernetes_version
 
     default_node_pool {
-        name                = "avagentpool-${var.environment}"
+        name                = "avapool${var.environment}"
         type                = "VirtualMachineScaleSets"        
         vm_size             = var.aks_vm_size        
         os_disk_size_gb     = 30
@@ -87,7 +87,7 @@ resource "azurerm_kubernetes_cluster" "av" {
 }
 
 resource "azurerm_container_registry" "av" {    
-    name                = "${var.acr_name}-${var.environment}"
+    name                = "${var.acr_name}${var.environment}"
     sku                 = var.acr_sku
 
     resource_group_name = azurerm_resource_group.av.name

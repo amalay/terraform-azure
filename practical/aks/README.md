@@ -1,4 +1,5 @@
-# Terraform for Azure Kubernete Service
+# Terraform for Azure Kubernete Service - Automate Infrastructure
+Here I am going to automate infrastructure setup process for AKS using Terraform Scripts and Azure DevOps for two environments DEV and UAT on a single click.
 
 ### Project Structure
 ![image](https://user-images.githubusercontent.com/84455469/130923865-df54c0cd-85a1-4562-a930-c1025e8601bc.png)

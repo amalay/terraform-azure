@@ -85,12 +85,17 @@ This azure-pipeline.yml file contains three stages as below:
 This is the older/classic way of setting up Build and Release pipelines using Tasks.
 
 ### Pre-requisite
-There are two pre-requisite steps your have follow before setting up the pipeline as below:
+There are three pre-requisite steps your have follow before setting up the pipeline as below:
 
-#### Step 1 - Generate SSH-Key
+#### Step 1 - Install Terraform Task. 
+Please make sure that your have installed "Terraform by Microsoft DevLabs" component as a prerequisite on your Azure DevOps environment. If it is not installed already then please go to below link and install it first.
+
+https://marketplace.visualstudio.com/items?itemName=ms-devlabs.custom-terraform-tasks
+
+#### Step 2 - Generate SSH-Key
 Generate ssh-key as per the above steps.
 
-#### Step 2 - Upload SSH-Key to your Azure DevOps
+#### Step 3 - Upload SSH-Key to your Azure DevOps
 Upload ssh-key to Azure DevOps as per the above steps.
 
 ### Steps to Setup Build Pipeline

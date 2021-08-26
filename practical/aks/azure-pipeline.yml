@@ -25,9 +25,9 @@ variables:
 ## Step-2: Install Latest Terraform (Ideally not needed if we use default Ubuntu Agents)
 ## Step-3: Validate Terraform Manifests (terraform init, terraform validate)
 stages:
-- stage: TerraformValidate
+- stage: Build
   jobs:
-    - job: TerraformValidateJob
+    - job: Terraform Validate Job
       continueOnError: false
 
       steps:
@@ -76,7 +76,7 @@ stages:
 ## Step-3: Terraform Initialize (State Storage to store in Azure Storage Account for AKS Dev Cluster)
 ## Step-4: Terraform Plan (Create Plan)
 ## Step-5: Terraform Apply (Use the plan created in previous step)
-- stage: DeployAKSClusters
+- stage: Deploy
   jobs:
     - deployment: DeployDevAKSCluster
       displayName: Deploy To AKS Dev Cluster
@@ -106,21 +106,5 @@ stages:
                 backendAzureRmKey: 'aks.$(DevEnv).terraform.tfstate'
                 allowTelemetryCollection: false
 
-            - task: TerraformCLI@0
-              displayName: Terraform Plan
-              inputs:
-                command: 'plan'
-                workingDirectory: '$(Pipeline.Workspace)/terraform'
-                environmentServiceName: '$(AzureServiceConnection)'
-                commandOptions: '-var ssh_public_key=$(sshkey.secureFilePath) -var environment=$(DevEnv) -out $(Pipeline.Workspace)/terraform/$(DevEnv)-$(Build.BuildId).out'
-                allowTelemetryCollection: false
-
-            - task: TerraformCLI@0
-              displayName: Terraform Apply
-              inputs:
-                command: 'apply'
-                workingDirectory: '$(Pipeline.Workspace)/terraform'
-                environmentServiceName: '$(AzureServiceConnection)'
-                commandOptions: '$(Pipeline.Workspace)/terraform/$(DevEnv)-$(Build.BuildId).out'
-                allowTelemetryCollection: false
+            
 

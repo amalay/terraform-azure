@@ -106,5 +106,23 @@ stages:
                 backendAzureRmKey: 'aks.$(DevEnv).terraform.tfstate'
                 allowTelemetryCollection: false
 
-            
+            - task: TerraformCLI@0
+              displayName: Terraform Plan
+              inputs:
+                command: 'plan'
+                workingDirectory: '$(Pipeline.Workspace)/terraform'
+                environmentServiceName: '$(AzureServiceConnection)'
+                commandOptions: '-var ssh_public_key=$(sshkey.secureFilePath) -var environment=$(DevEnv) -out $(Pipeline.Workspace)/terraform/$(DevEnv)-$(Build.BuildId).out'
+                allowTelemetryCollection: false
+
+            - task: TerraformCLI@0
+              displayName: Terraform Apply
+              inputs:
+                command: 'apply'
+                workingDirectory: '$(Pipeline.Workspace)/terraform'
+                environmentServiceName: '$(AzureServiceConnection)'
+                commandOptions: '$(Pipeline.Workspace)/terraform/$(DevEnv)-$(Build.BuildId).out'
+                allowTelemetryCollection: false
+
+                
 

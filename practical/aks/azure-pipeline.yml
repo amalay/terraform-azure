@@ -27,17 +27,10 @@ variables:
 stages:
 - stage: Build
   jobs:
-    - job: BuildAndValidate
+    - job: Build_Publish_Validate
       continueOnError: false
 
       steps:
-      - task: PublishPipelineArtifact@1
-        displayName: Publish Artifacts
-        inputs:
-          targetPath: '$(ProjectPath)'
-          artifact: 'terraform'
-          publishLocation: 'pipeline'
-
       - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-installer.TerraformInstaller@0
         displayName: Terraform Install
         inputs:
@@ -47,6 +40,13 @@ stages:
         displayName: 'Check Terraform Version'
         inputs:
           command: version
+
+      - task: PublishPipelineArtifact@1
+        displayName: Publish Artifacts
+        inputs:
+          targetPath: '$(ProjectPath)'
+          artifact: 'terraform'
+          publishLocation: 'pipeline'      
 
       - task: TerraformCLI@0
         displayName: Terraform Init
@@ -76,9 +76,9 @@ stages:
 ## Step-3: Terraform Initialize (State Storage to store in Azure Storage Account for AKS Dev Cluster)
 ## Step-4: Terraform Plan (Create Plan)
 ## Step-5: Terraform Apply (Use the plan created in previous step)
-- stage: Deploy DEV
+- stage: Deploy_DEV
   jobs:
-    - deployment: DeployToDev
+    - deployment: DEV
       displayName: Deploy To AKS Dev Cluster
       pool:
         vmImage: 'ubuntu-latest'

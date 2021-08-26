@@ -27,7 +27,7 @@ variables:
 stages:
 - stage: Build
   jobs:
-    - job: Terraform Validate Job
+    - job: BuildAndValidate
       continueOnError: false
 
       steps:

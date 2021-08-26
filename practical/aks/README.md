@@ -13,6 +13,9 @@ Here you can see that few terraform files and few yaml files as below:
 
 All .tf files containes terraform scripts and .yml file contains pipeline script to execute terraform scripts on Azure DevOps.
 
+## Setup Pipeline Using YAML (azure-pipeline.yml file) Scripts
+This is the modern way of setting the build and release pipeline using .yaml scripts.
+
 ### Pre-requisite
 There are three pre-requisite steps your have follow before setting up the pipeline as below:
 
@@ -53,7 +56,7 @@ Please refer below screenshot:
 
 ![image](https://user-images.githubusercontent.com/84455469/130929798-82aee4b4-20e2-485d-98d2-b1c1fb3d5158.png)
 
-### Setup Pipeline
+### Steps to Setup Pipeline using YAML scripts
 
 1. Go to pipelines in you Azure DevOps 
 2. Click on New Pipeline
@@ -76,3 +79,22 @@ This azure-pipeline.yml file contains three stages as below:
 
 #### Validate pipeline run result on Azure Portal
 ![image](https://user-images.githubusercontent.com/84455469/130923545-dd282c9b-2c16-49c8-bb21-2503e4cb077f.png)
+
+
+## Setup Pipeline Using Classic Tasks
+This is the older/classic way of setting up Build and Release pipelines using Tasks.
+
+### Pre-requisite
+There are two pre-requisite steps your have follow before setting up the pipeline as below:
+
+#### Step 1 - Generate SSH-Key
+Generate ssh-key as per the above steps.
+
+#### Step 2 - Upload SSH-Key to your Azure DevOps
+Upload ssh-key to Azure DevOps as per the above steps.
+
+### Steps to Setup Build Pipeline
+
+
+### Steps to Setup Release Pipeline
+

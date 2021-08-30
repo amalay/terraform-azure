@@ -352,3 +352,5 @@ MigrationBackup/
 .terraform
 .terraform.lock.hcl
 terraform.tfstate.backup
+ssh-keys/av-tf-aks-ssh-key
+ssh-keys/av-tf-aks-ssh-key.pub

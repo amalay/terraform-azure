@@ -12,7 +12,33 @@ Here you can see that few terraform files and few yaml files as below:
 5. azure-pipeline.yml
 
 All .tf files containes terraform scripts and .yml file contains pipeline script to execute terraform scripts on Azure DevOps.
+  
+## Backend Provider For Terraform State Management
 
+### Using Azure Storage Account
+```
+backend "azurerm" {    
+  storage_account_name = "<Your Storage Account Name>"                              Ex. "ave"
+  container_name       = "<Your Storage Account Container Name>"                    Ex. "terraformstate"
+  resource_group_name  = "<Your Resource Group Name Where Storage Account Exist>"   Ex. "RG-AVE"
+  key                  = "<Your Terraofrm State Key>"                               Ex. "aks.terraform.tfstate"  
+}
+```
+
+OR
+
+### Using Terraform Cloud
+```
+backend "remote" {
+  hostname = "app.terraform.io"
+  organization = "<Your Organization Name in Terraform>"      Ex. "AV"
+
+  workspaces {
+    name = "<Your Workspace Name in Terraform>"               Ex. "terraform-azure-dev"
+  }
+}
+```
+  
 ## Setup Pipeline Using YAML (azure-pipeline.yml file) Scripts
 This is the modern way of setting the build and release pipeline using .yaml scripts.
 
@@ -85,12 +111,17 @@ This azure-pipeline.yml file contains three stages as below:
 This is the older/classic way of setting up Build and Release pipelines using Tasks.
 
 ### Pre-requisite
-There are two pre-requisite steps your have follow before setting up the pipeline as below:
+There are three pre-requisite steps your have follow before setting up the pipeline as below:
 
-#### Step 1 - Generate SSH-Key
+#### Step 1 - Install Terraform Task. 
+Please make sure that your have installed "Terraform by Microsoft DevLabs" component as a prerequisite on your Azure DevOps environment. If it is not installed already then please go to below link and install it first.
+
+https://marketplace.visualstudio.com/items?itemName=ms-devlabs.custom-terraform-tasks
+
+#### Step 2 - Generate SSH-Key
 Generate ssh-key as per the above steps.
 
-#### Step 2 - Upload SSH-Key to your Azure DevOps
+#### Step 3 - Upload SSH-Key to your Azure DevOps
 Upload ssh-key to Azure DevOps as per the above steps.
 
 ### Steps to Setup Build Pipeline

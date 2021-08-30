@@ -18,10 +18,10 @@ All .tf files containes terraform scripts and .yml file contains pipeline script
 ### Using Azure Storage Account
 ```
 backend "azurerm" {    
-  storage_account_name = "ave"
-  container_name       = "terraformstate"    
-  resource_group_name  = "RG-AVE"
-  key                  = "aks.terraform.tfstate"  
+  storage_account_name = "<Your Storage Account Name>"                              Ex. "ave"
+  container_name       = "<Your Storage Account Container Name>"                    Ex. "terraformstate"
+  resource_group_name  = "<Your Resource Group Name Where Storage Account Exist>"   Ex. "RG-AVE"
+  key                  = "<Your Terraofrm State Key>"                               Ex. "aks.terraform.tfstate"  
 }
 ```
 
@@ -31,10 +31,10 @@ OR
 ```
 backend "remote" {
   hostname = "app.terraform.io"
-  organization = "AV"
+  organization = "<Your Organization Name in Terraform>"      Ex. "AV"
 
   workspaces {
-    name = "terraform-azure-dev"
+    name = "<Your Workspace Name in Terraform>"               Ex. "terraform-azure-dev"
   }
 }
 ```

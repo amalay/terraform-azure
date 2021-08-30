@@ -16,16 +16,19 @@ All .tf files containes terraform scripts and .yml file contains pipeline script
 ## Backend Provider For Terraform State Management
 
 ### Using Azure Storage Account
+```
 backend "azurerm" {    
   storage_account_name = "ave"
   container_name       = "terraformstate"    
   resource_group_name  = "RG-AVE"
   key                  = "aks.terraform.tfstate"  
 }
+```
 
 OR
 
 ### Using Terraform Cloud
+```
 backend "remote" {
   hostname = "app.terraform.io"
   organization = "AV"
@@ -34,6 +37,7 @@ backend "remote" {
     name = "terraform-azure-dev"
   }
 }
+```
   
 ## Setup Pipeline Using YAML (azure-pipeline.yml file) Scripts
 This is the modern way of setting the build and release pipeline using .yaml scripts.

@@ -1,1 +1,1 @@
-# terraform-azure
+# Terraform Practical

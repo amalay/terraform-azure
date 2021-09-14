@@ -9,3 +9,6 @@ Here I am not going to much focus on what is Infrastructure as a code rather I w
 4. How to automate whole process?
 
 There are various way to write code to create infrastructure but I will mainly focus on using Terraform script to create infrastructure.
+
+For the simplicity point of view, I have created two folders in this repository one <b>learning</b> and another is <b>practical</b>. I will suggest to first refer the learning part and then come to practical part.
+
